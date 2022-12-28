@@ -18,3 +18,11 @@ Detailed branch coverage:
 
         lcov.info
         reports
+
+Deploy to Goerli network (with EIP-1559 gas transaction):
+
+        forge create --rpc-url $goerliHTTPS_InfuraAPIKey --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage
+
+Deploy to Goerli network (with Legacy gas transaction):
+
+        forge create --legacy --rpc-url https://liberty20.shardeum.org/ --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage
