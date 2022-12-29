@@ -296,23 +296,23 @@
     }
   ],
   "bytecode": {
-    "object": "0x60806040526000805460ff1916600117905534801561001d57600080fd5b506102598061002d6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063ba414fa61461003b578063fa7626d414610057575b600080fd5b610043610064565b604051901515815260200160405180910390f35b6000546100439060ff1681565b60008054610100900460ff16156100845750600054610100900460ff1690565b6000737109709ecfa91a80626ff3989d68f67f5b1dd12d3b1561018a5760408051737109709ecfa91a80626ff3989d68f67f5b1dd12d602082018190526519985a5b195960d21b82840152825180830384018152606083019093526000929091610112917f667f9d70ca411d70ead50d8d5c22070dafc36ad75f3dcf5e7237b22ade9aecc4916080016101ca565b60408051601f198184030181529082905261012c916101ee565b6000604051808303816000865af19150503d8060008114610169576040519150601f19603f3d011682016040523d82523d6000602084013e61016e565b606091505b50915050808060200190518101906101869190610201565b9150505b919050565b6000815160005b818110156101b05760208185018101518683015201610196565b818111156101bf576000828601525b509290920192915050565b6001600160e01b03198316815260006101e6600483018461018f565b949350505050565b60006101fa828461018f565b9392505050565b60006020828403121561021357600080fd5b815180151581146101fa57600080fdfea26469706673582212202d443f2da664a61fde24e06666ed562a97c9f87d04937d82320bb4e5f4aaa59c64736f6c634300080f0033",
+    "object": "0x60806040526000805460ff1916600117905534801561001d57600080fd5b506102598061002d6000396000f3fe608060405234801561001057600080fd5b50600436106100365760003560e01c8063ba414fa61461003b578063fa7626d414610057575b600080fd5b610043610064565b604051901515815260200160405180910390f35b6000546100439060ff1681565b60008054610100900460ff16156100845750600054610100900460ff1690565b6000737109709ecfa91a80626ff3989d68f67f5b1dd12d3b1561018a5760408051737109709ecfa91a80626ff3989d68f67f5b1dd12d602082018190526519985a5b195960d21b82840152825180830384018152606083019093526000929091610112917f667f9d70ca411d70ead50d8d5c22070dafc36ad75f3dcf5e7237b22ade9aecc4916080016101f3565b60408051601f198184030181529082905261012c91610217565b6000604051808303816000865af19150503d8060008114610169576040519150601f19603f3d011682016040523d82523d6000602084013e61016e565b606091505b5091505080806020019051810190610186919061018f565b9150505b919050565b6000602082840312156101a157600080fd5b815180151581146101b157600080fd5b9392505050565b6000815160005b818110156101d957602081850181015186830152016101bf565b818111156101e8576000828601525b509290920192915050565b6001600160e01b031983168152600061020f60048301846101b8565b949350505050565b60006101b182846101b856fea2646970667358221220c2c5e224c618c585e2de148d601e46f618922977ecd1a6c9d46b827a81fac0f564736f6c63430008070033",
     "sourceMap": "715:15433:0:-:0;;;1572:26;;;-1:-1:-1;;1572:26:0;1594:4;1572:26;;;715:15433;;;;;;;;;;;;;;;;",
     "linkReferences": {}
   },
   "deployedBytecode": {
-    "object": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063ba414fa61461003b578063fa7626d414610057575b600080fd5b610043610064565b604051901515815260200160405180910390f35b6000546100439060ff1681565b60008054610100900460ff16156100845750600054610100900460ff1690565b6000737109709ecfa91a80626ff3989d68f67f5b1dd12d3b1561018a5760408051737109709ecfa91a80626ff3989d68f67f5b1dd12d602082018190526519985a5b195960d21b82840152825180830384018152606083019093526000929091610112917f667f9d70ca411d70ead50d8d5c22070dafc36ad75f3dcf5e7237b22ade9aecc4916080016101ca565b60408051601f198184030181529082905261012c916101ee565b6000604051808303816000865af19150503d8060008114610169576040519150601f19603f3d011682016040523d82523d6000602084013e61016e565b606091505b50915050808060200190518101906101869190610201565b9150505b919050565b6000815160005b818110156101b05760208185018101518683015201610196565b818111156101bf576000828601525b509290920192915050565b6001600160e01b03198316815260006101e6600483018461018f565b949350505050565b60006101fa828461018f565b9392505050565b60006020828403121561021357600080fd5b815180151581146101fa57600080fdfea26469706673582212202d443f2da664a61fde24e06666ed562a97c9f87d04937d82320bb4e5f4aaa59c64736f6c634300080f0033",
-    "sourceMap": "715:15433:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1819:584;;;:::i;:::-;;;179:14:6;;172:22;154:41;;142:2;127:18;1819:584:0;;;;;;;1572:26;;;;;;;;;1819:584;1853:4;1873:7;;;;;;;1869:528;;;-1:-1:-1;1903:7:0;;;;;;;;1819:584::o;1869:528::-;1941:17;2990:42;2978:55;3059:16;1980:374;;2196:43;;;1671:64;2196:43;;;380:51:6;;;-1:-1:-1;;;447:18:6;;;440:34;2196:43:0;;;;;;;;;353:18:6;;;2196:43:0;;;-1:-1:-1;;1671:64:0;;2086:175;;2135:34;;2086:175;;;:::i;:::-;;;;-1:-1:-1;;2086:175:0;;;;;;;;;;2047:232;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2020:259;;;2323:7;2312:27;;;;;;;;;;;;:::i;:::-;2297:42;;2002:352;1980:374;2374:12;1819:584;-1:-1:-1;1819:584:0:o;485:336:6:-;526:3;564:5;558:12;588:1;598:128;612:6;609:1;606:13;598:128;;;709:4;694:13;;;690:24;;684:31;671:11;;;664:52;627:12;598:128;;;744:6;741:1;738:13;735:48;;;779:1;770:6;765:3;761:16;754:27;735:48;-1:-1:-1;799:16:6;;;;;485:336;-1:-1:-1;;485:336:6:o;826:278::-;-1:-1:-1;;;;;;1011:33:6;;999:46;;981:3;1061:37;1095:1;1086:11;;1078:6;1061:37;:::i;:::-;1054:44;826:278;-1:-1:-1;;;;826:278:6:o;1109:189::-;1238:3;1263:29;1288:3;1280:6;1263:29;:::i;:::-;1256:36;1109:189;-1:-1:-1;;;1109:189:6:o;1303:277::-;1370:6;1423:2;1411:9;1402:7;1398:23;1394:32;1391:52;;;1439:1;1436;1429:12;1391:52;1471:9;1465:16;1524:5;1517:13;1510:21;1503:5;1500:32;1490:60;;1546:1;1543;1536:12",
+    "object": "0x608060405234801561001057600080fd5b50600436106100365760003560e01c8063ba414fa61461003b578063fa7626d414610057575b600080fd5b610043610064565b604051901515815260200160405180910390f35b6000546100439060ff1681565b60008054610100900460ff16156100845750600054610100900460ff1690565b6000737109709ecfa91a80626ff3989d68f67f5b1dd12d3b1561018a5760408051737109709ecfa91a80626ff3989d68f67f5b1dd12d602082018190526519985a5b195960d21b82840152825180830384018152606083019093526000929091610112917f667f9d70ca411d70ead50d8d5c22070dafc36ad75f3dcf5e7237b22ade9aecc4916080016101f3565b60408051601f198184030181529082905261012c91610217565b6000604051808303816000865af19150503d8060008114610169576040519150601f19603f3d011682016040523d82523d6000602084013e61016e565b606091505b5091505080806020019051810190610186919061018f565b9150505b919050565b6000602082840312156101a157600080fd5b815180151581146101b157600080fd5b9392505050565b6000815160005b818110156101d957602081850181015186830152016101bf565b818111156101e8576000828601525b509290920192915050565b6001600160e01b031983168152600061020f60048301846101b8565b949350505050565b60006101b182846101b856fea2646970667358221220c2c5e224c618c585e2de148d601e46f618922977ecd1a6c9d46b827a81fac0f564736f6c63430008070033",
+    "sourceMap": "715:15433:0:-:0;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;1819:584;;;:::i;:::-;;;1558:14:6;;1551:22;1533:41;;1521:2;1506:18;1819:584:0;;;;;;;1572:26;;;;;;;;;1819:584;1853:4;1873:7;;;;;;;1869:528;;;-1:-1:-1;1903:7:0;;;;;;;;1819:584::o;1869:528::-;1941:17;2990:42;2978:55;3059:16;1980:374;;2196:43;;;1671:64;2196:43;;;1288:51:6;;;-1:-1:-1;;;1355:18:6;;;1348:34;2196:43:0;;;;;;;;;1261:18:6;;;2196:43:0;;;-1:-1:-1;;1671:64:0;;2086:175;;2135:34;;2086:175;;;:::i;:::-;;;;-1:-1:-1;;2086:175:0;;;;;;;;;;2047:232;;;:::i;:::-;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;;2020:259;;;2323:7;2312:27;;;;;;;;;;;;:::i;:::-;2297:42;;2002:352;1980:374;2374:12;1819:584;-1:-1:-1;1819:584:0:o;14:277:6:-;81:6;134:2;122:9;113:7;109:23;105:32;102:52;;;150:1;147;140:12;102:52;182:9;176:16;235:5;228:13;221:21;214:5;211:32;201:60;;257:1;254;247:12;201:60;280:5;14:277;-1:-1:-1;;;14:277:6:o;296:336::-;337:3;375:5;369:12;399:1;409:128;423:6;420:1;417:13;409:128;;;520:4;505:13;;;501:24;;495:31;482:11;;;475:52;438:12;409:128;;;555:6;552:1;549:13;546:48;;;590:1;581:6;576:3;572:16;565:27;546:48;-1:-1:-1;610:16:6;;;;;296:336;-1:-1:-1;;296:336:6:o;637:278::-;-1:-1:-1;;;;;;822:33:6;;810:46;;792:3;872:37;906:1;897:11;;889:6;872:37;:::i;:::-;865:44;637:278;-1:-1:-1;;;;637:278:6:o;920:189::-;1049:3;1074:29;1099:3;1091:6;1074:29;:::i",
     "linkReferences": {}
   },
   "methodIdentifiers": {
     "IS_TEST()": "fa7626d4",
     "failed()": "ba414fa6"
   },
-  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.15+commit.e14f2714\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"log\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"log_address\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"log_bytes\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"log_bytes32\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"name\":\"log_int\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"val\",\"type\":\"address\"}],\"name\":\"log_named_address\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"val\",\"type\":\"bytes\"}],\"name\":\"log_named_bytes\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"val\",\"type\":\"bytes32\"}],\"name\":\"log_named_bytes32\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"val\",\"type\":\"int256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"decimals\",\"type\":\"uint256\"}],\"name\":\"log_named_decimal_int\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"val\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"decimals\",\"type\":\"uint256\"}],\"name\":\"log_named_decimal_uint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"val\",\"type\":\"int256\"}],\"name\":\"log_named_int\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"val\",\"type\":\"string\"}],\"name\":\"log_named_string\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"val\",\"type\":\"uint256\"}],\"name\":\"log_named_uint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"log_string\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"log_uint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"logs\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"IS_TEST\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"failed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/forge-std/lib/ds-test/src/test.sol\":\"DSTest\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"lib/forge-std/lib/ds-test/src/test.sol\":{\"keccak256\":\"0x59255be640d737042551c2edb38e19c92a451d1c28b7b7bd2448186499b007eb\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://20edd6a8fa81f8b6f39ec60fd28aadbad5f20a446f78e17886a5be086d7ae538\",\"dweb:/ipfs/QmVMTfjnMuZm87b83eoxawhAdXSBr86B77YUMvUEMgkgGw\"]}},\"version\":1}",
+  "rawMetadata": "{\"compiler\":{\"version\":\"0.8.7+commit.e28d00a7\"},\"language\":\"Solidity\",\"output\":{\"abi\":[{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"log\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"address\",\"name\":\"\",\"type\":\"address\"}],\"name\":\"log_address\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"log_bytes\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"\",\"type\":\"bytes32\"}],\"name\":\"log_bytes32\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"\",\"type\":\"int256\"}],\"name\":\"log_int\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"address\",\"name\":\"val\",\"type\":\"address\"}],\"name\":\"log_named_address\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"val\",\"type\":\"bytes\"}],\"name\":\"log_named_bytes\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"bytes32\",\"name\":\"val\",\"type\":\"bytes32\"}],\"name\":\"log_named_bytes32\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"val\",\"type\":\"int256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"decimals\",\"type\":\"uint256\"}],\"name\":\"log_named_decimal_int\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"val\",\"type\":\"uint256\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"decimals\",\"type\":\"uint256\"}],\"name\":\"log_named_decimal_uint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"int256\",\"name\":\"val\",\"type\":\"int256\"}],\"name\":\"log_named_int\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"string\",\"name\":\"val\",\"type\":\"string\"}],\"name\":\"log_named_string\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"key\",\"type\":\"string\"},{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"val\",\"type\":\"uint256\"}],\"name\":\"log_named_uint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"string\",\"name\":\"\",\"type\":\"string\"}],\"name\":\"log_string\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"uint256\",\"name\":\"\",\"type\":\"uint256\"}],\"name\":\"log_uint\",\"type\":\"event\"},{\"anonymous\":false,\"inputs\":[{\"indexed\":false,\"internalType\":\"bytes\",\"name\":\"\",\"type\":\"bytes\"}],\"name\":\"logs\",\"type\":\"event\"},{\"inputs\":[],\"name\":\"IS_TEST\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"view\",\"type\":\"function\"},{\"inputs\":[],\"name\":\"failed\",\"outputs\":[{\"internalType\":\"bool\",\"name\":\"\",\"type\":\"bool\"}],\"stateMutability\":\"nonpayable\",\"type\":\"function\"}],\"devdoc\":{\"kind\":\"dev\",\"methods\":{},\"version\":1},\"userdoc\":{\"kind\":\"user\",\"methods\":{},\"version\":1}},\"settings\":{\"compilationTarget\":{\"lib/forge-std/lib/ds-test/src/test.sol\":\"DSTest\"},\"evmVersion\":\"london\",\"libraries\":{},\"metadata\":{\"bytecodeHash\":\"ipfs\"},\"optimizer\":{\"enabled\":true,\"runs\":200},\"remappings\":[\":ds-test/=lib/forge-std/lib/ds-test/src/\",\":forge-std/=lib/forge-std/src/\"]},\"sources\":{\"lib/forge-std/lib/ds-test/src/test.sol\":{\"keccak256\":\"0x59255be640d737042551c2edb38e19c92a451d1c28b7b7bd2448186499b007eb\",\"license\":\"GPL-3.0-or-later\",\"urls\":[\"bzz-raw://20edd6a8fa81f8b6f39ec60fd28aadbad5f20a446f78e17886a5be086d7ae538\",\"dweb:/ipfs/QmVMTfjnMuZm87b83eoxawhAdXSBr86B77YUMvUEMgkgGw\"]}},\"version\":1}",
   "metadata": {
     "compiler": {
-      "version": "0.8.15+commit.e14f2714"
+      "version": "0.8.7+commit.e28d00a7"
     },
     "language": "Solidity",
     "output": {
@@ -686,7 +686,6 @@
             "src": "737:38:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "41304facd9323d75b11bcdd609cb38effffdb05710f7caf0e9b16c6d9d709f50",
             "name": "log",
             "nameLocation": "743:3:0",
             "parameters": {
@@ -731,7 +730,6 @@
             "src": "780:37:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "e7950ede0394b9f2ce4a5a1bf5a7e1852411f7e6661b4308c913c4bfd11027e4",
             "name": "logs",
             "nameLocation": "786:4:0",
             "parameters": {
@@ -776,7 +774,6 @@
             "src": "823:39:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "7ae74c527414ae135fd97047b12921a5ec3911b804197855d67e25c7b75ee6f3",
             "name": "log_address",
             "nameLocation": "829:11:0",
             "parameters": {
@@ -822,7 +819,6 @@
             "src": "867:39:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "e81699b85113eea1c73e10588b2b035e55893369632173afd43feb192fac64e3",
             "name": "log_bytes32",
             "nameLocation": "873:11:0",
             "parameters": {
@@ -867,7 +863,6 @@
             "src": "911:35:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "0eb5d52624c8d28ada9fc55a8c502ed5aa3fbe2fb6e91b71b5f376882b1d2fb8",
             "name": "log_int",
             "nameLocation": "917:7:0",
             "parameters": {
@@ -912,7 +907,6 @@
             "src": "951:36:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "2cab9790510fd8bdfbd2115288db33fec66691d476efc5427cfd4c0969301755",
             "name": "log_uint",
             "nameLocation": "957:8:0",
             "parameters": {
@@ -957,7 +951,6 @@
             "src": "992:37:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "23b62ad0584d24a75f0bf3560391ef5659ec6db1269c56e11aa241d637f19b20",
             "name": "log_bytes",
             "nameLocation": "998:9:0",
             "parameters": {
@@ -1002,7 +995,6 @@
             "src": "1034:38:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "0b2e13ff20ac7b474198655583edf70dedd2c1dc980e329c4fbb2fc0748b796b",
             "name": "log_string",
             "nameLocation": "1040:10:0",
             "parameters": {
@@ -1047,7 +1039,6 @@
             "src": "1078:55:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "9c4e8541ca8f0dc1c413f9108f66d82d3cecb1bddbce437a61caa3175c4cc96f",
             "name": "log_named_address",
             "nameLocation": "1084:17:0",
             "parameters": {
@@ -1121,7 +1112,6 @@
             "src": "1138:55:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "afb795c9c61e4fe7468c386f925d7a5429ecad9c0495ddb8d38d690614d32f99",
             "name": "log_named_bytes32",
             "nameLocation": "1144:17:0",
             "parameters": {
@@ -1194,7 +1184,6 @@
             "src": "1198:66:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "5da6ce9d51151ba10c09a559ef24d520b9dac5c5b8810ae8434e4d0d86411a95",
             "name": "log_named_decimal_int",
             "nameLocation": "1204:21:0",
             "parameters": {
@@ -1295,7 +1284,6 @@
             "src": "1269:67:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "eb8ba43ced7537421946bd43e828b8b2b8428927aa8f801c13d934bf11aca57b",
             "name": "log_named_decimal_uint",
             "nameLocation": "1275:22:0",
             "parameters": {
@@ -1396,7 +1384,6 @@
             "src": "1341:51:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "2fe632779174374378442a8e978bccfbdcc1d6b2b0d81f7e8eb776ab2286f168",
             "name": "log_named_int",
             "nameLocation": "1347:13:0",
             "parameters": {
@@ -1469,7 +1456,6 @@
             "src": "1397:52:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "b2de2fbe801a0df6c0cbddfd448ba3c41d48a040ca35c56c8196ef0fcae721a8",
             "name": "log_named_uint",
             "nameLocation": "1403:14:0",
             "parameters": {
@@ -1542,7 +1528,6 @@
             "src": "1454:53:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "d26e16cad4548705e4c9e2d94f98ee91c289085ee425594fd5635fa2964ccf18",
             "name": "log_named_bytes",
             "nameLocation": "1460:15:0",
             "parameters": {
@@ -1615,7 +1600,6 @@
             "src": "1512:54:0",
             "nodes": [],
             "anonymous": false,
-            "eventSelector": "280f4446b28a1372417dda658d30b95b2992b12ac9c7f378535f29a97acf3583",
             "name": "log_named_string",
             "nameLocation": "1518:16:0",
             "parameters": {
@@ -23633,7 +23617,6 @@
         ],
         "abstract": false,
         "baseContracts": [],
-        "canonicalName": "DSTest",
         "contractDependencies": [],
         "contractKind": "contract",
         "fullyImplemented": true,
