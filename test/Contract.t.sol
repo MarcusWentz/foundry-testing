@@ -7,6 +7,10 @@ import "src/Contract.sol";
 
 contract TestContract is Test {
 
+    //Functions fallback and receive used when the test contract is sent msg.value to prevent the test from reverting.
+    fallback() external payable {}     // Fallback function is called when msg.data is not empty
+    receive() external payable {}      // Function to receive Ether. msg.data must be empty
+
     //Define events here from other contracts since Foundry has trouble importing events from other contracts still.
     event setOpenDataEvent(address indexed user, uint newValue);
     event setOwnerDataEvent(uint newOwnerUnixTime);
@@ -62,19 +66,18 @@ contract TestContract is Test {
         vm.deal(address(0),ownerBalanceStart);
         uint prankBalanceStart = address(this).balance;
         assertEq(ownerBalanceStart,79228162514264337593543950335);
+        assertEq(address(simpleStorageInstance).balance, 0); 
         vm.startPrank(address(0)); //Change the address to not be the owner. The owner is address(this) in this context.
         uint msgValueWei = 1;
         vm.expectEmit(false,false,false,false); // Events have bool flags for indexed topic parameters in order (3 topics possible) along with arguments that might not be indexed (last flag). You can also check which address sent the event.
         emit donateToOwnerEvent();
-        
         assertEq(address(simpleStorageInstance).balance, 0); 
 
         
         simpleStorageInstance.donateToOwner{value: msgValueWei}();
         vm.stopPrank(); //Stop prank since we don't need to be another address anymore for increasing the owner balance from a transfer.
-        // assertEq(address(this).balance, ownerBalanceStart+1); 
-        assertEq(address(simpleStorageInstance).balance, 1); 
-        // assertEq(address(this).balance, ownerBalanceStart); 
+        assertEq(address(simpleStorageInstance).balance, 0); 
+        assertEq(address(this).balance, ownerBalanceStart+1); 
         assertEq(address(0).balance, prankBalanceStart-1); 
     }
 

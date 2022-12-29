@@ -11,12 +11,6 @@ contract SimpleStorage {
         owner = msg.sender;
     }
 
-    receive() external payable {
-    }
-    
-    fallback() external payable {
-    }
-
     event setOpenDataEvent(address indexed user, uint newValue); //Topics and other event arguments used for Foundry testing. Event arguments like this use gas in production so be careful.
     event setOwnerDataEvent(uint newOwnerUnixTime);
     event donateToOwnerEvent();
@@ -35,7 +29,7 @@ contract SimpleStorage {
 
     function donateToOwner() public payable {
         require(msg.value != 0, "MSG.VALUE_IS_ZERO!"); //WRITE AS CUSTOM ERROR!
-        // payable(owner).transfer(address(this).balance);
+        payable(owner).transfer(address(this).balance);
         emit donateToOwnerEvent();
     }
 
