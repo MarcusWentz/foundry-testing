@@ -71,9 +71,7 @@ contract TestContract is Test {
         uint msgValueWei = 1;
         vm.expectEmit(false,false,false,false); // Events have bool flags for indexed topic parameters in order (3 topics possible) along with arguments that might not be indexed (last flag). You can also check which address sent the event.
         emit donateToOwnerEvent();
-        assertEq(address(simpleStorageInstance).balance, 0); 
-
-        
+        assertEq(address(simpleStorageInstance).balance, 0);        
         simpleStorageInstance.donateToOwner{value: msgValueWei}();
         vm.stopPrank(); //Stop prank since we don't need to be another address anymore for increasing the owner balance from a transfer.
         assertEq(address(simpleStorageInstance).balance, 0); 
@@ -86,4 +84,3 @@ contract TestContract is Test {
         simpleStorageInstance.donateToOwner(); //MSG.VALUE is not set for call, so it is 0. 
     }
 }
-
