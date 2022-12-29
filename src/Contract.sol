@@ -11,10 +11,15 @@ contract SimpleStorage {
         owner = msg.sender;
     }
 
+    receive() external payable {
+    }
+    
+    fallback() external payable {
+    }
+
     event setOpenDataEvent(address indexed user, uint newValue); //Topics and other event arguments used for Foundry testing. Event arguments like this use gas in production so be careful.
     event setOwnerDataEvent(uint newOwnerUnixTime);
     event donateToOwnerEvent();
-
 
     function set(uint x) public {
         require(storedData != x, "CANNOT_BE_SAME_VALUE"); //WRITE AS CUSTOM ERROR!
@@ -28,10 +33,10 @@ contract SimpleStorage {
         emit setOwnerDataEvent(block.timestamp);
     }
 
-    // function donateToOwner() public payable {
-    //     require(msg.value > 0, "MSG.VALUE_IS_ZERO!"); //WRITE AS CUSTOM ERROR!
-    //     payable(owner).transfer(address(this).balance);
-    //     emit donateToOwnerEvent();
-    // }
+    function donateToOwner() public payable {
+        require(msg.value != 0, "MSG.VALUE_IS_ZERO!"); //WRITE AS CUSTOM ERROR!
+        // payable(owner).transfer(address(this).balance);
+        emit donateToOwnerEvent();
+    }
 
 }

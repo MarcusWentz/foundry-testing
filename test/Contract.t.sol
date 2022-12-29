@@ -6,6 +6,12 @@ import "forge-std/Test.sol";
 import "src/Contract.sol";
 
 contract TestContract is Test {
+
+    //Define events here from other contracts since Foundry has trouble importing events from other contracts still.
+    event setOpenDataEvent(address indexed user, uint newValue);
+    event setOwnerDataEvent(uint newOwnerUnixTime);
+    event donateToOwnerEvent();
+
     SimpleStorage simpleStorageInstance;
 
     function setUp() public {
@@ -40,7 +46,6 @@ contract TestContract is Test {
         emit setOwnerDataEvent(10);
         vm.warp(10);   //Increase block.timestamp by 10 seconds.
         simpleStorageInstance.setOwnerData();
-        // vm.stopPrank(); //Stop prank as contract address. We are already the owner address.
         assertEq(simpleStorageInstance.ownerUnixTimeContract(),10);
     }
 
@@ -49,12 +54,33 @@ contract TestContract is Test {
         assertEq(simpleStorageInstance.ownerUnixTimeContract(),0);
         vm.expectRevert();    
         simpleStorageInstance.setOwnerData();
-        // vm.stopPrank(); //Stop prank as contract address. We revert before hitting this line so we don't need to stop the prank.
+    }
+    
+    function testDonateToOwnerValidPath() public {
+        uint ownerBalanceStart = address(this).balance;
+        assertEq(ownerBalanceStart,79228162514264337593543950335);
+        vm.deal(address(0),ownerBalanceStart);
+        uint prankBalanceStart = address(this).balance;
+        assertEq(ownerBalanceStart,79228162514264337593543950335);
+        vm.startPrank(address(0)); //Change the address to not be the owner. The owner is address(this) in this context.
+        uint msgValueWei = 1;
+        vm.expectEmit(false,false,false,false); // Events have bool flags for indexed topic parameters in order (3 topics possible) along with arguments that might not be indexed (last flag). You can also check which address sent the event.
+        emit donateToOwnerEvent();
+        
+        assertEq(address(simpleStorageInstance).balance, 0); 
+
+        
+        simpleStorageInstance.donateToOwner{value: msgValueWei}();
+        vm.stopPrank(); //Stop prank since we don't need to be another address anymore for increasing the owner balance from a transfer.
+        // assertEq(address(this).balance, ownerBalanceStart+1); 
+        assertEq(address(simpleStorageInstance).balance, 1); 
+        // assertEq(address(this).balance, ownerBalanceStart); 
+        assertEq(address(0).balance, prankBalanceStart-1); 
     }
 
-    //Define events here for from other contracts since Foundry has trouble importing events from other contracts still.
-    event setOpenDataEvent(address indexed user, uint newValue);
-    event setOwnerDataEvent(uint newOwnerUnixTime);
-    
+    function testDonateToOwnerRevertPath() public {
+        vm.expectRevert();                     //Revert if MSG.VALUE is 0.
+        simpleStorageInstance.donateToOwner(); //MSG.VALUE is not set for call, so it is 0. 
+    }
 }
 

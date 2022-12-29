@@ -4,6 +4,10 @@ Quick test coverage:
 
     forge coverage
 
+Detailed test logs:
+
+    forge test --vvv
+
 Detailed branch coverage:
 
 1. Run 
