@@ -22,6 +22,10 @@ Detailed branch coverage:
 
         lcov.info
         reports
+        
+Fork a network and get coverage results:
+
+    forge coverage --fork-url $mainnetHTTPS_InfuraAPIKey --report lcov && genhtml lcov.info -o report --branch-coverage
 
 Deploy to Goerli network and verify at the same time on Etherscan (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
 
