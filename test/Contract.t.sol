@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: Unlicense
-pragma solidity 0.8.7;
+pragma solidity 0.8.18;
 
 import "forge-std/Test.sol";
 
@@ -61,14 +61,14 @@ contract TestContract is Test {
     }
     
     function testDonateToOwnerValidPath() public {
-        uint ownerBalanceStart = address(this).balance;
+        uint256 ownerBalanceStart = address(this).balance;
         assertEq(ownerBalanceStart,79228162514264337593543950335);
         vm.deal(address(0),ownerBalanceStart);
-        uint prankBalanceStart = address(this).balance;
+        uint256 prankBalanceStart = address(this).balance;
         assertEq(ownerBalanceStart,79228162514264337593543950335);
         assertEq(address(simpleStorageInstance).balance, 0); 
         vm.startPrank(address(0)); //Change the address to not be the owner. The owner is address(this) in this context.
-        uint msgValueWei = 1;
+        uint256 msgValueWei = 1;
         vm.expectEmit(false,false,false,false); // Events have bool flags for indexed topic parameters in order (3 topics possible) along with arguments that might not be indexed (last flag). You can also check which address sent the event.
         emit donateToOwnerEvent();
         assertEq(address(simpleStorageInstance).balance, 0);        

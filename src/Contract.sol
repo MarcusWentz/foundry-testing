@@ -1,5 +1,5 @@
 // SPDX-License-Identifier: MIT
-pragma solidity 0.8.7;
+pragma solidity 0.8.18;
 
 error sameStorageValue();
 error notOwner();
@@ -7,19 +7,19 @@ error msgValueZero();
 
 contract SimpleStorage {
 
-    uint  public storedData;  //Do not set 0 manually it wastes gas!
-    uint  public ownerUnixTimeContract; 
+    uint256 public storedData;  //Do not set 0 manually it wastes gas!
+    uint256 public ownerUnixTimeContract; 
     address public immutable owner;
 
     constructor() {
         owner = msg.sender;
     }
 
-    event setOpenDataEvent(address indexed user, uint newValue); //Topics and other event arguments used for Foundry testing. Event arguments like this use gas in production so be careful.
-    event setOwnerDataEvent(uint newOwnerUnixTime);
+    event setOpenDataEvent(address indexed user, uint256 newValue); //Topics and other event arguments used for Foundry testing. Event arguments like this use gas in production so be careful.
+    event setOwnerDataEvent(uint256 newOwnerUnixTime);
     event donateToOwnerEvent();
 
-    function set(uint x) public {
+    function set(uint256 x) public {
         if(storedData == x) { revert sameStorageValue(); }        
         storedData = x;
         emit setOpenDataEvent(msg.sender, x); //Topic 1 (user) and other argument not indexed (newValue) for Foundry.
