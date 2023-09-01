@@ -4,6 +4,7 @@ pragma solidity 0.8.18;
 error sameStorageValue();
 error notOwner();
 error msgValueZero();
+error etherNotSent();
 
 contract SimpleStorage {
 
@@ -20,20 +21,21 @@ contract SimpleStorage {
     event donateToOwnerEvent();
 
     function set(uint256 x) public {
-        if(storedData == x) { revert sameStorageValue(); }        
+        if(storedData == x) revert sameStorageValue();       
         storedData = x;
         emit setOpenDataEvent(msg.sender, x); //Topic 1 (user) and other argument not indexed (newValue) for Foundry.
     }
 
     function setOwnerData() public {
-        if(msg.sender != owner) { revert notOwner(); }        
+        if(msg.sender != owner) revert notOwner();       
         ownerUnixTimeContract = block.timestamp;
         emit setOwnerDataEvent(block.timestamp);
     }
 
     function donateToOwner() public payable {
-        if(msg.value == 0) { revert msgValueZero(); }        
-        payable(owner).transfer(address(this).balance);
+        if(msg.value == 0) revert msgValueZero();        
+        (bool sent, ) = payable(owner).call{value: msg.value}("");
+        if(sent == false) revert etherNotSent();
         emit donateToOwnerEvent();
     }
 
