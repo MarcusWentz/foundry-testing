@@ -27,9 +27,9 @@ Fork a network and get coverage results:
 ```shell
 forge coverage --fork-url $mainnetHTTPS_InfuraAPIKey --report lcov && genhtml lcov.info -o report --branch-coverage
 ```
-Deploy to Goerli network and verify at the same time on Etherscan (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
+Deploy to Sepolia network and verify at the same time on Etherscan (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
 ```shell
-forge create --rpc-url $goerliHTTPS_InfuraAPIKey --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage
+forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage
 ```
 Deploy to Shardeum Liberty 2.X network (with Legacy gas transaction):
 ```shell
