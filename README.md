@@ -27,9 +27,14 @@ Fork a network and get coverage results:
 ```shell
 forge coverage --fork-url $mainnetHTTPS_InfuraAPIKey --report lcov && genhtml lcov.info -o report --branch-coverage
 ```
-Deploy to Sepolia network and verify at the same time on Etherscan (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
+Deploy to Sepolia network and verify at the same time on Etherscan (with EIP-1559 gas transaction if you remove the --legacy flag) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
 ```shell
-forge create --rpc-url $sepoliaInfuraHttps --etherscan-api-key $etherscanApiKey --verify --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage
+forge create src/Contract.sol:SimpleStorage \
+--private-key $devTestnetPrivateKey \
+--rpc-url $sepoliaInfuraHttps \
+--etherscan-api-key $etherscanApiKey \
+--verify \
+--legacy
 ```
 [OLD BLOCKSCOUT] Deploy to Taiko L2 network and verify at the same time on Blockscout (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
 ```shell
