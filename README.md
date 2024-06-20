@@ -15,14 +15,14 @@ Detailed branch coverage:
 forge coverage --report lcov && genhtml lcov.info -o report --branch-coverage
 ```
 2. Check coverage results in
-
-        report/index.html
-
+```
+report/index.html
+```
 3. Delete the following before pushing to GitHub to keep commits lightweight:
-
-        lcov.info
-        reports
-        
+```
+lcov.info
+reports
+```     
 Fork a network and get coverage results:
 ```shell
 forge coverage --fork-url $mainnetHTTPS_InfuraAPIKey --report lcov && genhtml lcov.info -o report --branch-coverage
