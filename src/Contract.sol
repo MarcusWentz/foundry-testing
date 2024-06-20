@@ -18,7 +18,7 @@ contract SimpleStorage {
 
     event setOpenDataEvent(address indexed user, uint256 newValue); //Topics and other event arguments used for Foundry testing. Event arguments like this use gas in production so be careful.
     event setOwnerDataEvent(uint256 newOwnerUnixTime);
-    event donateToOwnerEvent();
+    event etherSentEvent();
 
     function set(uint256 x) public {
         if(storedData == x) revert sameStorageValue();       
@@ -32,11 +32,11 @@ contract SimpleStorage {
         emit setOwnerDataEvent(block.timestamp);
     }
 
-    function donateToOwner() public payable {
+    function sendEther(address sendTo) public payable {
         if(msg.value == 0) revert msgValueZero();        
-        (bool sent, ) = payable(owner).call{value: msg.value}("");
+        (bool sent, ) = sendTo.call{value: msg.value}("");
         if(sent == false) revert etherNotSent();
-        emit donateToOwnerEvent();
+        emit etherSentEvent();
     }
 
 }

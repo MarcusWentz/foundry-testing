@@ -5,6 +5,14 @@ import "forge-std/Test.sol";
 
 import "src/Contract.sol";
 
+contract ContractNotPayableRevert {
+
+    // //Functions fallback and receive used when the test contract is sent msg.value to prevent the test from reverting.
+    // fallback() external payable {}     // Fallback function is called when msg.data is not empty
+    // receive() external payable {}      // Function to receive Ether. msg.data must be empty
+
+}
+
 contract TestContract is Test {
 
     //Functions fallback and receive used when the test contract is sent msg.value to prevent the test from reverting.
@@ -14,9 +22,10 @@ contract TestContract is Test {
     //Define events here from other contracts since Foundry has trouble importing events from other contracts still.
     event setOpenDataEvent(address indexed user, uint newValue);
     event setOwnerDataEvent(uint newOwnerUnixTime);
-    event donateToOwnerEvent();
+    event etherSentEvent();
 
     SimpleStorage simpleStorageInstance;
+    ContractNotPayableRevert contractNotPayableRevert;
 
     function setUp() public {
         simpleStorageInstance = new SimpleStorage();
@@ -60,7 +69,7 @@ contract TestContract is Test {
         simpleStorageInstance.setOwnerData();
     }
     
-    function testDonateToOwnerValidPath() public {
+    function testSendEtherValidPath() public {
         uint256 ownerBalanceStart = address(this).balance;
         assertEq(ownerBalanceStart,79228162514264337593543950335);
         vm.deal(address(0),ownerBalanceStart);
@@ -70,17 +79,28 @@ contract TestContract is Test {
         vm.startPrank(address(0)); //Change the address to not be the owner. The owner is address(this) in this context.
         uint256 msgValueWei = 1;
         vm.expectEmit(false,false,false,false); // Events have bool flags for indexed topic parameters in order (3 topics possible) along with arguments that might not be indexed (last flag). You can also check which address sent the event.
-        emit donateToOwnerEvent();
+        emit etherSentEvent();
         assertEq(address(simpleStorageInstance).balance, 0);        
-        simpleStorageInstance.donateToOwner{value: msgValueWei}();
+        simpleStorageInstance.sendEther{value: msgValueWei}(simpleStorageInstance.owner());
         vm.stopPrank(); //Stop prank since we don't need to be another address anymore for increasing the owner balance from a transfer.
         assertEq(address(simpleStorageInstance).balance, 0); 
         assertEq(address(this).balance, ownerBalanceStart+1); 
         assertEq(address(0).balance, prankBalanceStart-1); 
     }
 
-    function testDonateToOwnerRevertPath() public {
+    function testSendEtherRevertMsgValueZero() public {
+        vm.startPrank(address(0)); //Change the address to not be the owner. The owner is address(this) in this context.
+        address ownerAddress = simpleStorageInstance.owner(); //vm.expectRevert() checks the next call. Prevent the wrong call check my saving this call in memory.
         vm.expectRevert(msgValueZero.selector);  //Revert if MSG.VALUE is 0. Custom error from SimpleStorage.
-        simpleStorageInstance.donateToOwner();   //MSG.VALUE is not set for call, so it is 0. 
+        simpleStorageInstance.sendEther{value: 0}(ownerAddress);   //MSG.VALUE is not set for call, so it is 0. 
+    }
+
+    function testSendEtherRevertAddressNotPayable() public {
+        contractNotPayableRevert = new ContractNotPayableRevert();
+        vm.deal(address(0),100 ether);
+        vm.startPrank(address(0)); //Change the address to not be the owner. The owner is address(this) in this context.
+        uint256 msgValueWei = 1;
+        vm.expectRevert(etherNotSent.selector);  //Revert if MSG.VALUE is 0. Custom error from SimpleStorage.
+        simpleStorageInstance.sendEther{value: msgValueWei}(address(contractNotPayableRevert)); //Revert since there are no fallback or receive functions at this contract address.
     }
 }
