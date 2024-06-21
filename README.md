@@ -1,4 +1,6 @@
-## Test coverage:
+## Foundry Testing
+
+### Test coverage
 
 Quick test coverage:
 ```shell
@@ -27,28 +29,31 @@ Fork a network and get coverage results:
 ```shell
 forge coverage --fork-url $mainnetHTTPS_InfuraAPIKey --report lcov && genhtml lcov.info -o report --branch-coverage
 ```
-Deploy to Sepolia network and verify at the same time on Etherscan (with EIP-1559 gas transaction if you remove the --legacy flag) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
+
+### Deploy and Verify 
+
+#### Base Sepolia
+
+Deploy to Base Sepolia network and verify at the same time on Etherscan (with EIP-1559 gas transaction if you remove the --legacy flag) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
 ```shell
 forge create src/Contract.sol:SimpleStorage \
 --private-key $devTestnetPrivateKey \
---rpc-url $sepoliaInfuraHttps \
---etherscan-api-key $etherscanApiKey \
---verify \
---legacy
+--rpc-url $baseSepoliaHTTPS \
+--etherscan-api-key $basescanApiKey \
+--verify 
 ```
-[OLD BLOCKSCOUT] Deploy to Taiko L2 network and verify at the same time on Blockscout (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
-```shell
-forge create --rpc-url https://rpc.test.taiko.xyz --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage --verify --verifier blockscout --verifier-url https://explorer.test.taiko.xyz/api\? 
-```
+
+#### Blockscout Updated 
+
 Deploy to Taiko L2 network (Jolnir chainId 167007) and verify at the same time on Blockscout (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
 ```shell
 forge create --rpc-url https://rpc.jolnir.taiko.xyz --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage --verify --verifier blockscout --verifier-url https://blockscoutapi.jolnir.taiko.xyz/api\?
 ```
-Deploy to Taiko L3 network and verify at the same time on Blockscout (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
+
+#### Blockscout Outdated
+
+[OLD BLOCKSCOUT] Deploy to Taiko L2 network and verify at the same time on Blockscout (with EIP-1559 gas transaction) (credit: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
 ```shell
-forge create --rpc-url https://rpc.l3test.taiko.xyz --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage --verify --verifier blockscout --verifier-url https://blockscoutapi.l3test.taiko.xyz/api\?
+forge create --rpc-url https://rpc.test.taiko.xyz --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage --verify --verifier blockscout --verifier-url https://explorer.test.taiko.xyz/api\? 
 ```
-Deploy to Shardeum Liberty 2.X network (with Legacy gas transaction):
-```shell
-forge create --legacy --rpc-url https://liberty20.shardeum.org/ --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage
-```
+
