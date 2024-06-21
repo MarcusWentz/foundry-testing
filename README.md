@@ -34,15 +34,25 @@ forge coverage --fork-url $mainnetHTTPS_InfuraAPIKey --report lcov && genhtml lc
 
 (reference: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):
 
-#### Base Sepolia
+#### Base Sepolia with EIP-1559 Gas (Default)
 
-Deploy to Base Sepolia network and verify at the same time on Etherscan with EIP-1559 gas (Legacy gas if we add the --legacy flag) 
 ```shell
 forge create src/Contract.sol:SimpleStorage \
 --private-key $devTestnetPrivateKey \
 --rpc-url $baseSepoliaHTTPS \
 --etherscan-api-key $basescanApiKey \
 --verify 
+```
+
+#### Base Sepolia with Legacy Gas
+
+```shell
+forge create src/Contract.sol:SimpleStorage \
+--private-key $devTestnetPrivateKey \
+--rpc-url $baseSepoliaHTTPS \
+--etherscan-api-key $basescanApiKey \
+--verify \
+--legacy
 ```
 
 #### Blockscout Updated 
