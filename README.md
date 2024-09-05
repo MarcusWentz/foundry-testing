@@ -67,3 +67,12 @@ forge create --rpc-url https://rpc.jolnir.taiko.xyz --private-key $devTestnetPri
 forge create --rpc-url https://rpc.test.taiko.xyz --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage --verify --verifier blockscout --verifier-url https://explorer.test.taiko.xyz/api\? 
 ```
 
+### Testnet Bridges Sepolia to L2 EVM Rollups
+
+#### Base Sepolia 
+
+https://superbridge.app/base-sepolia
+
+#### Optimism Sepolia
+
+https://superbridge.app/op-sepolia
