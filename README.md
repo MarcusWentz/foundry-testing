@@ -55,16 +55,25 @@ forge create src/Contract.sol:SimpleStorage \
 --legacy
 ```
 
-#### Blockscout Updated 
+#### Blockscout Deploy and Verify
 
 ```shell
-forge create --rpc-url https://rpc.jolnir.taiko.xyz --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage --verify --verifier blockscout --verifier-url https://blockscoutapi.jolnir.taiko.xyz/api\?
+forge create src/Contract.sol:SimpleStorage \
+--private-key $devTestnetPrivateKey \
+--rpc-url https://sepolia.unichain.org \
+--verify \
+--verifier blockscout \
+--verifier-url https://unichain-sepolia.blockscout.com/api/
 ```
 
-#### Blockscout Outdated
-
+### Blockscout Verify Contract Already Deployed
 ```shell
-forge create --rpc-url https://rpc.test.taiko.xyz --private-key $devTestnetPrivateKey src/Contract.sol:SimpleStorage --verify --verifier blockscout --verifier-url https://explorer.test.taiko.xyz/api\? 
+forge verify-contract \
+--rpc-url https://sepolia.unichain.org \
+<contract_address> \
+src/Contract.sol:SimpleStorage \
+--verifier blockscout \
+--verifier-url https://unichain-sepolia.blockscout.com/api/
 ```
 
 ### Testnet Bridges Sepolia to L2 EVM Rollups
