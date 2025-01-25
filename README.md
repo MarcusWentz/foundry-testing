@@ -41,6 +41,7 @@ forge create src/Contract.sol:SimpleStorage \
 --private-key $devTestnetPrivateKey \
 --rpc-url $baseSepoliaHTTPS \
 --etherscan-api-key $basescanApiKey \
+--broadcast \
 --verify 
 ```
 
@@ -52,6 +53,7 @@ forge create src/Contract.sol:SimpleStorage \
 --rpc-url $baseSepoliaHTTPS \
 --etherscan-api-key $basescanApiKey \
 --verify \
+--broadcast \
 --legacy
 ```
 
@@ -61,6 +63,7 @@ forge create src/Contract.sol:SimpleStorage \
 forge create src/Contract.sol:SimpleStorage \
 --private-key $devTestnetPrivateKey \
 --rpc-url https://sepolia.unichain.org \
+--broadcast \
 --verify \
 --verifier blockscout \
 --verifier-url https://unichain-sepolia.blockscout.com/api/
