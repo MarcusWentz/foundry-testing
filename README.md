@@ -57,6 +57,26 @@ forge create src/Contract.sol:SimpleStorage \
 --legacy
 ```
 
+#### Etherscan Verify Contract Already Deployed 
+
+Useful for UniswapV2Pair (ERC-20 LP token deployed from UniswapV2Factory):
+
+UniswapV2Factory.sol with library imports:
+
+https://github.com/Uniswap/v2-core/blob/master/contracts/UniswapV2Pair.sol
+
+Single file deployment to copy and paste quickly:
+
+https://etherscan.io/token/0xa2107fa5b38d9bbd2c461d6edf11b11a50f6b974#code
+
+```shell
+forge verify-contract \
+--rpc-url $baseSepoliaHTTPS \
+<contract_address> \
+src/UniswapV2Pair.sol:UniswapV2Pair \
+--etherscan-api-key $basescanApiKey  
+```
+
 #### Blockscout Deploy and Verify
 
 ```shell
