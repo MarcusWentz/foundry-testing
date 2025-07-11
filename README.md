@@ -99,29 +99,29 @@ src/Contract.sol:SimpleStorage \
 --verifier-url https://unichain-sepolia.blockscout.com/api/
 ```
 
-### Fluent Devnet Testing 
+### Fluent Testnet  
 
 #### Deploy and Verify 
 
 ```shell
 forge create src/Contract.sol:SimpleStorage \
 --private-key $devTestnetPrivateKey \
---rpc-url https://rpc.dev.gblend.xyz/ \
+--rpc-url https://rpc.testnet.fluent.xyz/ \
 --broadcast \
 --verify \
 --verifier blockscout \
---verifier-url https://blockscout.dev.gblend.xyz/api/
+--verifier-url https://testnet.fluentscan.xyz/api/
 ```
 
 #### Verify Contract Already Deployed
 
 ```shell
 forge verify-contract \
---rpc-url https://rpc.dev.gblend.xyz/ \
+--rpc-url https://rpc.testnet.fluent.xyz/ \
 <contract_address> \
 src/Contract.sol:SimpleStorage \
 --verifier blockscout \
---verifier-url https://blockscout.dev.gblend.xyz/api/
+--verifier-url https://testnet.fluentscan.xyz/api/
 ```
 
 ### Testnet Bridges Sepolia to L2 EVM Rollups
