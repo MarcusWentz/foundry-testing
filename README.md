@@ -29,6 +29,10 @@ Fork a network and get coverage results:
 ```shell
 forge coverage --fork-url $mainnetHTTPS_InfuraAPIKey --report lcov && genhtml lcov.info -o report --branch-coverage
 ```
+Forge gas tests:
+```shell
+forge test --gas-report
+```
 
 ### Deploy and Verify 
 
