@@ -10,10 +10,10 @@ contract SimpleStorage {
 
     uint256 public storedData;  //Do not set 0 manually it wastes gas!
     uint256 public ownerUnixTimeContract; 
-    address public immutable owner;
+    address public immutable OWNER;
 
     constructor() {
-        owner = msg.sender;
+        OWNER = msg.sender;
     }
 
     event setOpenDataEvent(address indexed user, uint256 newValue); //Topics and other event arguments used for Foundry testing. Event arguments like this use gas in production so be careful.
@@ -27,7 +27,7 @@ contract SimpleStorage {
     }
 
     function setOwnerData() public {
-        if(msg.sender != owner) revert notOwner();       
+        if(msg.sender != OWNER) revert notOwner();       
         ownerUnixTimeContract = block.timestamp;
         emit setOwnerDataEvent(block.timestamp);
     }

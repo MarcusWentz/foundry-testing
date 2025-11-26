@@ -33,7 +33,10 @@ Forge gas tests:
 ```shell
 forge test --gas-report
 ```
-
+Forge contract sizes:
+```shell
+forge build --sizes
+```
 ### Deploy and Verify 
 
 (reference: https://docs.moonbeam.network/builders/build/eth-api/verify-contracts/etherscan-plugins/):

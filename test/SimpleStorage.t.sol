@@ -1,9 +1,15 @@
 // SPDX-License-Identifier: Unlicense
 pragma solidity 0.8.30;
 
-import "forge-std/Test.sol";
+import {Test} from "forge-std/Test.sol";
+import {SimpleStorage} from "src/SimpleStorage.sol";
 
-import "src/Contract.sol";
+//Custom errors in the test file as well to import directly.
+
+error sameStorageValue();
+error notOwner();
+error msgValueZero();
+error etherNotSent();
 
 contract ContractNotPayableRevert {
 
@@ -34,7 +40,7 @@ contract TestContract is Test {
     function testInitialStorage() public {
         assertEq(simpleStorageInstance.storedData(),0);
         assertEq(simpleStorageInstance.ownerUnixTimeContract(),0);
-        assertEq(simpleStorageInstance.owner(),address(this));
+        assertEq(simpleStorageInstance.OWNER(),address(this));
     }
 
     function testSetValidPath() public {
@@ -53,7 +59,7 @@ contract TestContract is Test {
     }
 
     function testSetOwnerDataValidPath() public {
-        assertEq(address(this),simpleStorageInstance.owner());
+        assertEq(address(this),simpleStorageInstance.OWNER());
         assertEq(simpleStorageInstance.ownerUnixTimeContract(),0);
         vm.expectEmit(false,false,false,true); // Events have bool flags for indexed topic parameters in order (3 topics possible) along with arguments that might not be indexed (last flag). You can also check which address sent the event.
         emit setOwnerDataEvent(10);
@@ -81,7 +87,7 @@ contract TestContract is Test {
         vm.expectEmit(false,false,false,false); // Events have bool flags for indexed topic parameters in order (3 topics possible) along with arguments that might not be indexed (last flag). You can also check which address sent the event.
         emit etherSentEvent();
         assertEq(address(simpleStorageInstance).balance, 0);        
-        simpleStorageInstance.sendEther{value: msgValueWei}(simpleStorageInstance.owner());
+        simpleStorageInstance.sendEther{value: msgValueWei}(simpleStorageInstance.OWNER());
         vm.stopPrank(); //Stop prank since we don't need to be another address anymore for increasing the owner balance from a transfer.
         assertEq(address(simpleStorageInstance).balance, 0); 
         assertEq(address(this).balance, ownerBalanceStart+1); 
@@ -90,7 +96,7 @@ contract TestContract is Test {
 
     function testSendEtherRevertMsgValueZero() public {
         vm.startPrank(address(0)); //Change the address to not be the owner. The owner is address(this) in this context.
-        address ownerAddress = simpleStorageInstance.owner(); //vm.expectRevert() checks the next call. Prevent the wrong call check my saving this call in memory.
+        address ownerAddress = simpleStorageInstance.OWNER(); //vm.expectRevert() checks the next call. Prevent the wrong call check my saving this call in memory.
         vm.expectRevert(msgValueZero.selector);  //Revert if MSG.VALUE is 0. Custom error from SimpleStorage.
         simpleStorageInstance.sendEther{value: 0}(ownerAddress);   //MSG.VALUE is not set for call, so it is 0. 
     }
